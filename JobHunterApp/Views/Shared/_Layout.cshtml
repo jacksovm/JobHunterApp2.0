@@ -23,8 +23,10 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Job Listings", "Index", "Listings")</li>
+                    <li>@Html.ActionLink("Send Message", "Index", "Messages")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Search", "SearchResult", "Search")</li>
                     @if (User.IsInRole("Business"))
                     {
                        <li> @Html.ActionLink("Post A Job Listing", "Create", "Listings")</li>
@@ -45,6 +47,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    @Scripts.Render("~/favicon.ico");
+    @Scripts.Render("~/favicon.ico")
 </body>
 </html>
