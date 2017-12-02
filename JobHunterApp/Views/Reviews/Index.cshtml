@@ -36,11 +36,18 @@
         <td>
             @Html.DisplayFor(modelItem => item.Star.StarsID)/5
         </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReviewID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReviewID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReviewID })
-        </td>*@
+                @*
+    @Html.ActionLink("Edit", "Edit", new { id=item.ReviewID }) |
+    @Html.ActionLink("Details", "Details", new { id=item.ReviewID })|
+                *@
+        @if (User.IsInRole("Admin"))
+        {
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.ReviewID })
+        </td>
+        }
+            
+        
     </tr>
 }
 
