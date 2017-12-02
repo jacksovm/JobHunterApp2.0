@@ -24,6 +24,8 @@ namespace JobHunterApp.Models
         public int ListingID { get; set; }
         public string Id { get; set; }
         public string Location { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

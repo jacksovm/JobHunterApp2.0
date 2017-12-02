@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<JobHunterApp.Models.Listing>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Job Listings";
 }
 
-<h2>Index</h2>
+<h2>Job Listings</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<body style='background: #00ff21'>
 <table class="table">
     <tr>
         <th>
@@ -18,7 +19,16 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </th>
+        <th>
+            GoogleMap
         </th>
         <th></th>
     </tr>
@@ -29,17 +39,30 @@
             @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitude)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AspNetUser.Email)
         </td>
         <td>
+            Google Map Link
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ListingID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ListingID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ListingID })
         </td>
+
     </tr>
 }
 
 </table>
+
+
+</body>
