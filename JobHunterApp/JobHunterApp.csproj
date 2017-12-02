@@ -204,6 +204,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="GoogleMapWindow.aspx.cs">
+      <DependentUpon>GoogleMapWindow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GoogleMapWindow.aspx.designer.cs">
+      <DependentUpon>GoogleMapWindow.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs">
       <DependentUpon>JobHunterDB2.tt</DependentUpon>
@@ -265,6 +272,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="GoogleMapWindow.aspx" />
     <Content Include="Models\JobHunterDB2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>JobHunterDB2.edmx</DependentUpon>

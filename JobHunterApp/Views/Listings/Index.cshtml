@@ -9,42 +9,83 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<body style= 'background: #00ff21'>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Location)
+            Latitude
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Longitude
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AspNetUser.Email)
         </th>
-        <th></th>
+        <th>
+            GoogleMap
+            <!---Html.DisplayNameFor(model => model.JobType.TypeID)-->
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Latitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Longitude)
+            @{ 
+                string LatString = item.Location.ToString();
+            }
+
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
+            @{ 
+                string LngString = item.Description.ToString();
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+        <td>
+            <button onclick="myFunction()">Find It!</button>
+            <script>
+                        function myFunction() {
+
+                            
+                            var leftQuote = "\"";
+                            var rightQuote = "\"";
+                            //var koopra = //Html.DisplayFor(modelItem => LocatStrng).ToString();
+                            sessionStorage.setItem('zorg', "34.995609833,-81.9699969856");
+                            //sessionStorage.setItem('zorg', "34.9956098333, -81.9699969856");
+                            sessionStorage.setItem('latitude', @Html.DisplayFor(modelItem => LatString));
+                            sessionStorage.setItem('longitude', @Html.DisplayFor(modelItem => LngString));
+                            //localStorage.setItem('zarb', cale);
+                            var kootra = sessionStorage.getItem('zorg');
+                            var coordArray = [];
+                            coordArray.push(kootra);
+                            var coord = coordArray[0].split(",");
+
+                            var latCoord = coord[0];
+                            var lngCoord = coord[1];
+
+                            sessionStorage.setItem('abey', latCoord);
+                            sessionStorage.setItem('cbey', lngCoord);
+                            window.open("/GoogleMapWindow.aspx");
+                            //sessionStorage.removeItem('latitude');
+                            //sessionStorage.removeItem('longitude');
+                            //removeCoord();
+                            sessionStorage.removeItem('latitude');
+                            sessionStorage.removeItem('longitude');
+                        }
+
+                        function removeCoord()
+                        {
+                            sessionStorage.removeItem('latitude');
+                            sessionStorage.removeItem('longitude');
+                        }
+
+
+            </script>
+
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ListingID }) |
@@ -55,3 +96,5 @@
 }
 
 </table>
+
+</body>
