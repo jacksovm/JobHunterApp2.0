@@ -1,6 +1,6 @@
 ﻿@model JobHunterApp.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Account Info";
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -10,18 +10,19 @@
     <h4>Change your account settings</h4>
     <hr />
     <dl class="dl-horizontal">
-        @ViewBag.discription
-        <dt>Password: </dt> 
+        <dt>Email: </dt>
+        <dd>@this.User.Identity.Name</dd >
+        <dt> Password: </dt>
         <dd>
             [
-            @if (Model.HasPassword)
+            @if(Model.HasPassword)
             {
-                
-                @Html.ActionLink("Change your password", "ChangePassword")
+
+            @Html.ActionLink("Change your password", "ChangePassword")
             }
             else
             {
-                @Html.ActionLink("Create", "SetPassword")
+            @Html.ActionLink("Create", "SetPassword")
             }
             ]
         </dd>
@@ -30,17 +31,14 @@
             @Model.Logins.Count [
             @Html.ActionLink("Manage", "ManageLogins") ]
         </dd>*@
+
+        
         
     @if (User.IsInRole("Admin"))
             {
-           
-            }
-     else
-            {
-                <dd>
-                    
-                </dd>
-            }
+        <dt>@Html.ActionLink("View All Accounts", "Index", "AspNetUsers")</dt>
+    }
+
 
 
 
