@@ -5,20 +5,22 @@
 }
 
 <h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (User.IsInRole("Job-Hunter"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ReviewContent)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.AspNetUser.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Star.StarsID)
+            Review
+        </th>
+        <th>
+            Stars
         </th>
         <th></th>
     </tr>
@@ -26,19 +28,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ReviewContent)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.AspNetUser.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Star.StarsID)
+            @Html.DisplayFor(modelItem => item.ReviewContent)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Star.StarsID)/5
+        </td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ReviewID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ReviewID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ReviewID })
-        </td>
+        </td>*@
     </tr>
 }
 
