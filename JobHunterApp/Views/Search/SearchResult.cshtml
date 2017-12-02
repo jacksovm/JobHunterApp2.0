@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Search Results";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="searchResult">
+  <script>
+  (function () {
+    window.__gcse = {
+         callback: searchCallback
+    };
+    function searchCallback() {
+          $('#gsc-i-id1').focus();
+          $('#gsc-i-id1').val('@ViewBag.SearchString');
+          $(".gsc-search-button").trigger('click');
+    }   
+    var cx = '017324461458485767041:msrmqbucske';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+  </script>
+  <gcse:search>
+  </gcse:search>
+</div>

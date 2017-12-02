@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<JobHunterApp.Models.Listing>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Job Listings";
 }
 
-<h2>Index</h2>
+<h2>Job Listings</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,6 +13,12 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -27,6 +33,12 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitude)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
