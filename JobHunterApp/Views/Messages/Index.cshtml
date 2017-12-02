@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Subject)
+            Subject:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MessageContent)
+            Content:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+            To:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AspNetUser1.Email)
+            From:
         </th>
         <th></th>
     </tr>
@@ -41,7 +41,7 @@
             @Html.DisplayFor(modelItem => item.AspNetUser1.Email)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MessageID }) |
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.MessageID }) |*@
             @Html.ActionLink("Details", "Details", new { id=item.MessageID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.MessageID })
         </td>
