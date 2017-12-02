@@ -1,0 +1,26 @@
+﻿@model JobHunterApp.Models.Star
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Star</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StarAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StarAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StarsID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
