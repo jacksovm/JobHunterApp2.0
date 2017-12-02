@@ -26,8 +26,7 @@
                     {
                         <li>@Html.ActionLink("Send Message", "Index", "Messages")</li>
                     }
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    
                     <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
                     @if (User.IsInRole("Business"))
                     {
@@ -43,6 +42,8 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Upstate Job Hunter</p>
+            <p>@Html.ActionLink("About", "About", "Home")</p>
+            <p>@Html.ActionLink("Contact", "Contact", "Home")</p>
         </footer>
     </div>
 
