@@ -5,10 +5,13 @@
 <h2>@ViewBag.Title</h2>
 
 <div class="searchResult">
+  @{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+  }  
   <script>
   (function () {
     window.__gcse = {
-         callback: searchCallback
+     callback: searchCallback
     };
     function searchCallback() {
           $('#gsc-i-id1').focus();
@@ -19,7 +22,7 @@
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//cse.google.com/cse.js?cx=' + cx;
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
   })();
