@@ -4,7 +4,7 @@
     ViewBag.Title = "Message Home";
 }
 
-<h2>Index</h2>
+<h2>Inbox</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            Subject:
-        </th>
-        <th>
-            Content:
-        </th>
-        <th>
             To:
         </th>
         <th>
             From:
+        </th>
+        <th>
+            Subject:
+        </th>
+        <th>
+            Content:
         </th>
         <th></th>
     </tr>
@@ -29,16 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Subject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MessageContent)
+            @Html.DisplayFor(modelItem => item.AspNetUser1.Email)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AspNetUser.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AspNetUser1.Email)
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageContent)
         </td>
         <td>
             @*@Html.ActionLink("Edit", "Edit", new { id=item.MessageID }) |*@
