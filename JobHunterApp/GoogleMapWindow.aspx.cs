@@ -13,5 +13,10 @@ namespace JobHunterApp
         {
 
         }
+
+        protected void Unnamed_Click1(object sender, EventArgs e)
+        {
+            lbl1.Text = "Look for the Logo!";
+        }
     }
 }

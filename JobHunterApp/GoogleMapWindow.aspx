@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GoogleMapWindow.aspx.cs" Inherits="JobHunterApp.GoogleMapWindow" %>
 
+
+
 <!DOCTYPE html>
 <h2>Google Map Location</h2>
 <html>
@@ -23,8 +25,27 @@
         padding: 0;
       }
     </style>
+
+
   </head>
+
+    
   <body>
+      <!---TextBox Part------>
+      <form runat ="server">
+          Enter Latitude, Longitude:
+          <asp:TextBox id="txt1" runat="server" />
+          <asp:Button OnClick="Unnamed_Click1" Text="Submit" runat="server" />
+          <p><asp:Label id="lbl1" runat="server" /></p>
+<br /><br />
+
+          </form>
+  <script>
+                    function getCoords(t1) {
+                        var fullCoordinates = t1;
+                        return fullCoordinates;
+                    }
+      </script>
       
     <div id="map"></div>
     <script>
@@ -60,7 +81,7 @@
         locatArray.push(locations);
 
 
-
+        var xanax = getCoords;
         //THIS FINALLY WORKS - EDIT: 2:00 AM
 
         var loc = locatArray[0].split(",");
@@ -192,6 +213,7 @@
 &callback=initMap">
     </script>
   </body>
+
 </html>
 <h3>
     <script type="text/javascript">
