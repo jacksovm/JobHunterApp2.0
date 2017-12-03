@@ -104,8 +104,9 @@
                 info: {
                     icon: iconBase + 'info-i_maps.png'
                 },
+                //icon: pushBase + 'pink-pushpin.png'
                 actualLocal: {
-                    icon: pushBase + 'pink-pushpin.png'
+                    icon: 'Transparent Trojan.png'
                 }
             };
 
