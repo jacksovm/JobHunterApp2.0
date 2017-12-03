@@ -1,4 +1,6 @@
-﻿@model JobHunterApp.Models.Message
+﻿@Styles.Render("Site.css")
+@model JobHunterApp.Models.Message
+
 
 @{
     ViewBag.Title = "New Message";
@@ -42,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MessageContent, "Content:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MessageContent, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MessageContent, new { htmlAttributes = new { @class = "form-control2" } })
                 @Html.ValidationMessageFor(model => model.MessageContent, "", new { @class = "text-danger" })
             </div>
         </div>
