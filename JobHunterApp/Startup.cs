@@ -39,7 +39,7 @@ namespace JobHunterApp
                 user.UserName = "Admin";
                 user.Email = "Admin@gmail.com";
 
-                string userPWD = "A@Z200711";
+                string userPWD = "1Password!";
 
                 var chkUser = UserManager.Create(user, userPWD);
 
@@ -47,8 +47,6 @@ namespace JobHunterApp
                 if (chkUser.Succeeded)
                 {
                     var result1 = UserManager.AddToRole(user.Id, "Admin");
-                    //UserManager.AddToRole(user.Id, "Admin");
-
                 }
             }
 

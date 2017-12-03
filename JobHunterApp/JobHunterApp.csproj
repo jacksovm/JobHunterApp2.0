@@ -296,6 +296,7 @@
     <Content Include="Models\JobHunterDB2.edmx.diagram">
       <DependentUpon>JobHunterDB2.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\UpstateJobHunter - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
