@@ -30,7 +30,7 @@
   </head>
 
     
-  <body>
+  <body style ='background: #00ff21'>
       <!---TextBox Part----
       <form runat ="server">
           Enter Latitude, Longitude:

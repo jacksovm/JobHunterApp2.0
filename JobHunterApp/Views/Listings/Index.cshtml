@@ -22,10 +22,10 @@
 <table class="table">
     <tr>
         <th>
-            Latitude
+            @Html.DisplayNameFor(model => model.Location)
         </th>
         <th>
-            Longitude
+           @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AspNetUser.Email)
@@ -40,6 +40,8 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Location)
+
+            <!---capturing latitude-->
             @{ 
                 string LatString = item.Location.ToString();
             }
@@ -47,6 +49,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
+            <!---capturing longitude-->
             @{ 
                 string LngString = item.Description.ToString();
             }
@@ -57,49 +60,42 @@
         <td>
             <button onclick="myFunction()">Find It!</button>
             <script>
-                        function myFunction() {
+                function myFunction() {
 
-                            
-                            var leftQuote = "\"";
-                            var rightQuote = "\"";
-                            //var koopra = //Html.DisplayFor(modelItem => LocatStrng).ToString();
-                            sessionStorage.setItem('zorg', "34.995609833,-81.9699969856");
-                            //sessionStorage.setItem('zorg', "34.9956098333, -81.9699969856");
-                            sessionStorage.setItem('latitude', @Html.DisplayFor(modelItem => LatString));
-                            sessionStorage.setItem('longitude', @Html.DisplayFor(modelItem => LngString));
-                            //localStorage.setItem('zarb', cale);
-                            var kootra = sessionStorage.getItem('zorg');
-                            
+                    /*Original Plan was session storage
+                    sessionStorage.setItem('latitude', Html.DisplayFor(modelItem => LatString));
+                    sessionStorage.setItem('longitude', Html.DisplayFor(modelItem => LngString));*/
+                    //Allows for opening of google map
+                    window.open("/GoogleMapWindow.aspx");
 
-                            //sessionStorage.setItem('abey', latCoord);
-                            //sessionStorage.setItem('cbey', lngCoord);
-                            window.open("/GoogleMapWindow.aspx");
-                            //sessionStorage.removeItem('latitude');
-                            //sessionStorage.removeItem('longitude');
-                            //removeCoord();
-                            sessionStorage.removeItem('latitude');
-                            sessionStorage.removeItem('longitude');
-                        }
-
-                        function removeCoord()
-                        {
-                            sessionStorage.removeItem('latitude');
-                            sessionStorage.removeItem('longitude');
-                        }
-
-
+                }
             </script>
 
         </td>
-        
-            @Html.ActionLink("Edit", "Edit", new { id=item.ListingID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ListingID }) |
+
+        <td>
+            @if (User.IsInRole("Business"))
+            {
+               @Html.ActionLink("Edit", "Edit", new { id = item.ListingID }) 
+            }
+
+            |
+
+            @Html.ActionLink("Details", "Details", new { id = item.ListingID }) 
+
+            |
+
+            @Html.ActionLink("Questions", "Index", "Questions")
+           
             @if (User.IsInRole("Admin"))
             {
             <td>
                 @Html.ActionLink("Delete", "Delete", new { id = item.ListingID })
             </td>
             }
+        </td>
+           
+
     </tr>
 }
 
