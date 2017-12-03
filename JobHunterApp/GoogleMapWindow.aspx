@@ -61,7 +61,13 @@
             return fullCoordinates;
 
         }
-        
+
+        //var dbLocat = parseFloat(locat);
+        //sessionStorage.setItem(fullLocat, koop)
+        //sessionStorage.setItem(locat, 34.9956098333)
+        //sessionStorage.setItem(half, -81.9699969856)
+        //var longit = new google.maps.LatLng(locat, halfLocat);
+        //fullLocat = locat + "," + longit;
 
         function initMap() {
             var map;
@@ -72,6 +78,7 @@
             var item = document.getElementById("theButton"),
                 val = item.form.valueId.value;
 
+            //Declaring local map variables to be used
             var locations = val;
             var coordArray = [];
             coordArray.push(locations);
