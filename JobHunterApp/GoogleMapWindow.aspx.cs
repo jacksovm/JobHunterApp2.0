@@ -17,6 +17,15 @@ namespace JobHunterApp
         protected void Unnamed_Click1(object sender, EventArgs e)
         {
             lbl1.Text = "Look for the Logo!";
+            method1(txt1.Text);
+            
+        }
+
+        protected string method1(string k)
+        {
+            string coord = k.ToString();
+            return coord;
+
         }
     }
 }

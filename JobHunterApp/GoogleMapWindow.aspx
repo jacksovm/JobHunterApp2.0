@@ -31,81 +31,59 @@
 
     
   <body>
-      <!---TextBox Part------>
+      <!---TextBox Part----
       <form runat ="server">
           Enter Latitude, Longitude:
           <asp:TextBox id="txt1" runat="server" />
           <asp:Button OnClick="Unnamed_Click1" Text="Submit" runat="server" />
           <p><asp:Label id="lbl1" runat="server" /></p>
-<br /><br />
-
           </form>
-  <script>
-                    function getCoords(t1) {
-                        var fullCoordinates = t1;
-                        return fullCoordinates;
-                    }
-      </script>
+<br /><br />--->
+
+      <!----Textbox Version 2---->
+      <form>
+          Enter Latitude, Longitude:
+         <input type="text" id="formValueId" name="valueId"/>
+         <input type="button" id="theButton"/>
+      </form>
       
     <div id="map"></div>
+
     <script>
-        //Up there before script:
-        //<div id ="map"></div>
-        //EDIT 2:01 PM - parseFloat WORKS!
-        //Declaring local map variables to be used
-        var map;
-        //var myLatlng = new google.maps.LatLng(parseFloat(co[0]), parseFloat(co[1]));
+        var button = document.getElementById("theButton"),
+            valus = button.form.valueId.value;
+        button.onclick = function () {
+            initMap();
+        }
 
-        //EDIT 3:32 PM - localStorage WORKS!
-        //var locat = localStorage.getItem('zorg');
+        function getCoords(t1) {
+            var fullCoordinates = t1;
+            return fullCoordinates;
 
+        }
         
-
-
-        //var locat = parseFloat(34.9956098333);
-        //var locat;
-        //var halfLocat = parseFloat(-81.9699969856);
-        
-        //locat = localStorage.getItem('zorg');
-
-        //Array Creation
-        var locations;
-
-        var locatArray = [];
-
-        //locations.push(localStorage.getItem('zorg'));
-
-        //sessionStorage.setItem(locations, 'zorg');
-
-        locations = sessionStorage.getItem('zorg');
-        locatArray.push(locations);
-
-
-        var xanax = getCoords;
-        //THIS FINALLY WORKS - EDIT: 2:00 AM
-
-        var loc = locatArray[0].split(",");
-        //var lat = parseFloat(loc[0]);
-        //var lng = parseFloat(-81.9699969856);
-        //var lng = parseFloat(loc[1]);
-
-        var lat = parseFloat(sessionStorage.getItem('latitude'));
-        var lng = parseFloat(sessionStorage.getItem('longitude'));
-
-        //var modLat = parseFloat(locations);
-        //var modLng = parseFloat(-81.9699969856)
-
-        var firsLoc;
-        var secLat;
-
-        //var dbLocat = parseFloat(locat);
-        //sessionStorage.setItem(fullLocat, koop)
-        //sessionStorage.setItem(locat, 34.9956098333)
-        //sessionStorage.setItem(half, -81.9699969856)
-        //var longit = new google.maps.LatLng(locat, halfLocat);
-        //fullLocat = locat + "," + longit;
 
         function initMap() {
+            var map;
+
+            //EDIT 11:25 AM works now!
+            //Getting coordinates
+            //var locations = "34.995, -81.969";
+            var item = document.getElementById("theButton"),
+                val = item.form.valueId.value;
+
+            var locations = val;
+            var coordArray = [];
+            coordArray.push(locations);
+            var coord = coordArray[0].split(",");
+
+            var latCoord = coord[0];
+            var lngCoord = coord[1];
+
+            var lat = parseFloat(latCoord);
+            var lng = parseFloat(lngCoord);
+            //var lat = parseFloat(34.995);
+            //var lng = parseFloat(-81.9699969856);
             map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 16,
                 //34.9956098333, -81.9699969856)
@@ -215,9 +193,9 @@
   </body>
 
 </html>
-<h3>
+<!----<h3>
     <script type="text/javascript">
         document.write(lat)
       </script>
-</h3>
+</h3>-->
 

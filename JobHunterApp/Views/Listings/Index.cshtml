@@ -69,15 +69,10 @@
                             sessionStorage.setItem('longitude', @Html.DisplayFor(modelItem => LngString));
                             //localStorage.setItem('zarb', cale);
                             var kootra = sessionStorage.getItem('zorg');
-                            var coordArray = [];
-                            coordArray.push(kootra);
-                            var coord = coordArray[0].split(",");
+                            
 
-                            var latCoord = coord[0];
-                            var lngCoord = coord[1];
-
-                            sessionStorage.setItem('abey', latCoord);
-                            sessionStorage.setItem('cbey', lngCoord);
+                            //sessionStorage.setItem('abey', latCoord);
+                            //sessionStorage.setItem('cbey', lngCoord);
                             window.open("/GoogleMapWindow.aspx");
                             //sessionStorage.removeItem('latitude');
                             //sessionStorage.removeItem('longitude');
