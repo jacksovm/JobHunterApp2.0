@@ -6,12 +6,18 @@
 
 <h2>Job Listings</h2>
 
-@*@if (User.IsInRole("Business"))
+<!-------
+    Remember Business Account Login Info:
+    email: business@email.com
+    password:1Password!
+    
+    -->
+@if (User.IsInRole("Business"))
 {
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-}*@
+}
 <body style= 'background: #00ff21'>
 <table class="table">
     <tr>
@@ -91,8 +97,8 @@
 
         </td>
         
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.ListingID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ListingID }) |*@
+            @Html.ActionLink("Edit", "Edit", new { id=item.ListingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ListingID }) |
             @if (User.IsInRole("Admin"))
             {
             <td>
