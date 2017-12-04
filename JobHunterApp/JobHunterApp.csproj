@@ -311,6 +311,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Transparent Trojan.png" />
     <Content Include="Views\google09ee4c427d36412e.html" />
+    <Content Include="Views\Search\google09ee4c427d36412e.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
