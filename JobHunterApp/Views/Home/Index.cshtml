@@ -6,16 +6,10 @@
     <h1>Upstate Job Hunter</h1>
     <p class="lead"><i>We're here to help find the right job for you!</i></p>
     <p><a href="/Home/About" class="btn btn-primary btn-lg">Learn More About Us &raquo;</a></p>
-    <div class="searchControl">
-        <br />
-        @using (Html.BeginForm("Search", "Search", FormMethod.Get))
-        {
-            <div class="input-group">
-                <input type="text" name="SearchString" class="form-control" placeholder="Press Enter to Search">
-                  <input class="btn btn-primary btnlg" type="submit" value="Search &raquo;" />
-            </div><!-- /input-group -->
-        }
-    </div>
+    <br />
+    <input type="text" name="SearchString" class="form-control" placeholder="Click Search to See Listings">
+    <input class="btn btn-primary btnlg" type="submit" value="Search &raquo;" onclick="window.location.href= '/Listings/Index'" />
+
 </div>
 
 <div class="row">
