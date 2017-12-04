@@ -273,6 +273,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="google09ee4c427d36412e.html" />
     <Content Include="GoogleMapWindow.aspx" />
     <Content Include="Models\JobHunterDB2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
